@@ -10,6 +10,7 @@ import PostGrid from './components/PostGrid';
 import Thread from './components/Thread';
 
 const App: React.FC = () => {
+	/* Router set up for Thread Links */
   return (
     <Router>
     	<div className='App'>

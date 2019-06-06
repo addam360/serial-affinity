@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 
 /* Stylesheets */
 import '../styles/Thread.css';
-import '../styles/Post.css';
+import '../styles/Post.css'; // reuse ups, downs, comments
 import { Link } from 'react-router-dom';
 
 class Thread extends Component<any, any> {
 
+  /* Initialise default values, won't return error if user navigate directly to /thread */
   constructor(props: any) {
     super(props);
     this.state = {
@@ -23,9 +24,7 @@ class Thread extends Component<any, any> {
 
   componentDidMount() {
     /* Get state from Post */
-    this.setState(this.props.location.state.threadState, () => {
-      console.log(this.state.threadState);
-    });
+    this.setState(this.props.location.state.threadState);
   }
 
   render() {

@@ -6,8 +6,11 @@ import '../styles/Post.css';
 
 class Post extends Component<any, any> {
 
+  /* 'Dumb' render component */
   render() {
   	let { id, subreddit, title, selftext, author, downs, ups, url, fullname, num_comments } = this.props;
+    
+    /* State to be passed to Thread on Link */
     let threadState = {
       subreddit: subreddit,
       title: title,

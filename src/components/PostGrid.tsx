@@ -23,10 +23,12 @@ class PostGrid extends Component<any, any> {
 		this.getPostsFromSubreddit('redditdev', '');
 	}
 
+	/* Load More onClick Action */
 	getNextPostsFromSubreddit = (e: React.MouseEvent) => {
 		this.getPostsFromSubreddit(this.state.subreddit, this.state.after);
 	}
 
+	/* Enter Subreddit onChange Action */
 	setSubreddit = (e: React.FormEvent<HTMLInputElement>) => {
 		this.setState({
 			subreddit: e.currentTarget.value,
@@ -36,16 +38,20 @@ class PostGrid extends Component<any, any> {
 		})
 	}
 
+	/* AJAX to reddit API, get post listing */
 	getPostsFromSubreddit = (subreddit: string, after: string) => {
+		/* Set API URL with CORS */
 		const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 		const redditUrl = `https://reddit.com/r/${subreddit}/hot.json?after=${after}`;
 
+		/* GET method */
 		fetch(proxyUrl + redditUrl)
 		.then(response => {
 			return response.json();
 		})
 		.then(results => {
 
+			/* Initialise defaults, returned in case of error */
 			let posts = [];
 			let after = '';
 
