@@ -1,0 +1,31 @@
+.PostGrid {
+	padding: 24px;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(308px, 1fr));
+	grid-gap: 14px;
+	grid-auto-flow: row dense;
+}
+
+.LoadMoreButton {
+	background-color: rgba(0,0,0,0.5);
+	color: #fff;
+	font-size: 1.1em;
+	padding: 24px;
+}
+
+.SubredditSearch {
+	height: 48px;
+	grid-column-start: 1;
+	grid-column-end: -1;
+	background-color: rgba(0,0,0,0.5);
+	color: #fff;
+	padding: 12px;
+}
+
+.SubredditSearchButton {
+	float: right;
+	border: 1px solid #fff;
+	height: 24px;
+	width: 60px;
+	font-size: 0.8em;
+}
